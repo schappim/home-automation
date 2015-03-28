@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/themes/default/jquery.mobile-1.4.5.min.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet"  src="/custom.css">
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Raspberry Pi Home Automation</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Welcome to your Raspberry Pi home automation server.<br><br></p>
+    <ul data-role="listview">
+      <li><a href="#lights">Lights</a></li>
+      <li><a href="#camera">Camera</a></li>
+      <li><a href="#weather">Weather</a></li>
+    </ul>
+  </div>
+
+</div> 
+
+
+
+<div data-role="page" id="camera">
+  <div data-role="header">
+    <h1>Camera</h1>
+    <a href="#" class="ui-btn" data-rel="back">Go Back</a>
+
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div>
+      <img src="/img/photo.jpg" />
+    </div>
+    <div style="text-align:center;">
+      <button id="camera-refresh" class="ui-btn ui-corner-all">Refresh Image</button>
+    </div>
+  </div>
+
+</div> 
+
+<div data-role="page" id="lights">
+  <div data-role="header">
+    <h1>Lights</h1>
+    <a href="#" class="ui-btn" data-rel="back">Go Back</a>
+
+  </div>
+
+  <div data-role="main" class="ui-content">
+<form>
+    <label for="flip-select">Red LED:</label>
+    <select id="red" class="leds" name="flip-select" data-role="flipswitch">
+        <option>Off</option>
+        <option>On</option>
+    </select>
+</form>
+<form>
+    <label for="flip-select">Green LED:</label>
+    <select id="green" class="leds"  name="flip-select" data-role="flipswitch">
+        <option>Off</option>
+        <option>On</option>
+    </select>
+</form>
+<form>
+    <label for="flip-select">Blue:</label>
+    <select id="blue" class="leds"  name="flip-select" data-role="flipswitch">
+        <option>Off</option>
+        <option>On</option>
+    </select>
+</form>
+
+  </div>
+
+</div> 
+
+<div data-role="page" id="weather">
+  <div data-role="header">
+    <h1>Weather</h1>
+    <a href="#" class="ui-btn" data-rel="back">Go Back</a>
+
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <h2>Temperature</h2>
+    <p>The temperature is <%= @temperature %> &deg;C</p>
+    <p>The pressure is <%= @pressure %> <a href="http://en.wikipedia.org/wiki/Pascal_(unit)">Pascals</a></p>
+  </div>
+
+</div> 
+<script src="/js/custom.js"></script>
+
+</body>
+</html>
