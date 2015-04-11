@@ -4,7 +4,8 @@ $("#camera-refresh").click(function(){
   console.log("clicked")
 
     $.post("/camera/refresh", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
+        location.reload();
+        //alert("Data: " + data + "\nStatus: " + status);
     });
 });
 
@@ -12,7 +13,7 @@ $("#camera-refresh").click(function(){
 $(".leds").change(function(){
 
   var led = this.id;
-  var value = $(this).val();
+  var status = $(this).val();
   
   console.log(led + ":" + status);
 
